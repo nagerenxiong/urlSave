@@ -32,7 +32,13 @@
     else{
        $str = file_get_contents($fileUrl);
        $str1=$str.$url;
-       echo $str1;
+       $str2=strstr(nl2br(file_get_contents($fileUrl)),_post("url"));
+       // echo ($str2);
+        if($str2!=""){
+          echo 2;
+          return;
+        }
        wirte($fileUrl,$str1);
     }
+   
   ?>
